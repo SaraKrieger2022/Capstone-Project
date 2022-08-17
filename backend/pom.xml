@@ -57,10 +57,7 @@
                     </execution>
                 </executions>
             </plugin>
-
-
-
         </plugins>
+        <finalName>animal-adoption</finalName>
     </build>
-
 </project>
