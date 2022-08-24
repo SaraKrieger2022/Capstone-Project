@@ -1,17 +1,23 @@
-import React, {useState} from 'react';
 import './App.css';
-import axios from "axios";
+import React from "react";
+import {HashRouter} from "react-router-dom";
+import AllRoutes from "./Components/AllRoutes";
+
 
 export default function App() {
 
-  const [message, setMessage] = useState();
 
-  axios.get("/hello")
-      .then((response) => response.data)
-      .then(setMessage)
+    return (
+        <HashRouter>
+            <header>
+                <h1>Dogs</h1>
+                <AllRoutes/>
 
-  return (
-    <h1>{message}</h1>
-  );
+
+
+            </header>
+        </HashRouter>
+
+    );
 }
 
