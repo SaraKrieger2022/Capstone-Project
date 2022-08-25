@@ -4,6 +4,7 @@ package com.sara.animaladoption.components;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 @Service
 public class AnimalService {
 
@@ -14,11 +15,9 @@ public class AnimalService {
         this.animalRepo = animalRepo;
     }
 
-        public List<Animal> getAllAnimals(){
+    public List<Animal> getAllAnimals() {
         return animalRepo.findAll();
-        }
-
-
+    }
 
 }
 
