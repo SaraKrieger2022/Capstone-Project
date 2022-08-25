@@ -13,5 +13,4 @@ export type Animal = {
     other_dogs: boolean,
     cats: boolean,
 
-
 }

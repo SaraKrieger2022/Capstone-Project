@@ -1,14 +1,11 @@
 package com.sara.animaladoption.components;
 
-
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.UUID;
 
 @Service
 public class AnimalService {
-
 
     private final AnimalRepo animalRepo;
 
@@ -16,10 +13,9 @@ public class AnimalService {
         this.animalRepo = animalRepo;
     }
 
-        public List<Animal> getAllAnimals(){
+    public List<Animal> getAllAnimals() {
         return animalRepo.findAll();
-        }
-
+    }
 
     public Animal addAnimal(NewAnimal newAnimal) {
         return animalRepo.save(new Animal(
@@ -42,9 +38,4 @@ public class AnimalService {
         return UUID.randomUUID().toString();
     }
 
-
 }
-
-
-
-

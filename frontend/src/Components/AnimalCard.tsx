@@ -1,30 +1,26 @@
 import {Animal} from "./Animal";
 
 type AnimalCardProps = {
-    animals: Animal
+    animal: Animal
 }
 
-
-
-export default function AnimalCard(props: AnimalCardProps){
+export default function AnimalCard(props: AnimalCardProps) {
 
     return (
         <>
-            {props.animals.id}
-            {props.animals.name}
-            {props.animals.breed}
-            {props.animals.gender}
-            {props.animals.colour}
-            {props.animals.age}
-            {props.animals.size}
-            {props.animals.vaccinated}
-            {props.animals.spayed_neutered}
-            {props.animals.healthy}
-            {props.animals.kids}
-            {props.animals.other_dogs}
-            {props.animals.cats}
+            {props.animal.id}
+            {props.animal.name}
+            {props.animal.breed}
+            {props.animal.gender}
+            {props.animal.colour}
+            {props.animal.age}
+            {props.animal.size}
+            {props.animal.vaccinated}
+            {props.animal.spayed_neutered}
+            {props.animal.healthy}
+            {props.animal.kids}
+            {props.animal.other_dogs}
+            {props.animal.cats}
         </>
-
-
-    )
+    );
 }
