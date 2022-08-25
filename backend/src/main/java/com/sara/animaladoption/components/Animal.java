@@ -12,12 +12,12 @@ public record Animal(
     String colour,
     String age,
     String size,
-    Boolean vaccinated,
-    Boolean spayed_neutered,
-    Boolean healthy,
-    Boolean kids,
-    Boolean other_dogs,
-    Boolean cats
+    boolean vaccinated,
+    boolean spayed_neutered,
+    boolean healthy,
+    boolean kids,
+    boolean other_dogs,
+    boolean cats
 
     ){
 }

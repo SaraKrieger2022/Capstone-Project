@@ -1,8 +1,7 @@
 package com.sara.animaladoption.components;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -21,6 +20,14 @@ private final AnimalService animalService;
     public List<Animal> getAllAnimals(){
         return animalService.getAllAnimals();
     }
+
+    @PostMapping
+    @ResponseStatus(code = HttpStatus.CREATED)
+    public Animal addAnimal(@RequestBody NewAnimal newAnimal) {
+        return animalService.addAnimal(newAnimal);
+
+    }
+
 
 
 
