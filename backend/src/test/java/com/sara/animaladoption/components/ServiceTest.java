@@ -1,8 +1,5 @@
-package com.sara.animaladoption;
+package com.sara.animaladoption.components;
 
-import com.sara.animaladoption.components.Animal;
-import com.sara.animaladoption.components.AnimalRepo;
-import com.sara.animaladoption.components.AnimalService;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
