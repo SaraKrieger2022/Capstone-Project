@@ -9,7 +9,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 
-class ServiceTest {
+class AnimalServiceTest {
 
 
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
