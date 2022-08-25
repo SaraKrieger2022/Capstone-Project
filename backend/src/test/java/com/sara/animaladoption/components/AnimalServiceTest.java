@@ -8,10 +8,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
 class AnimalServiceTest {
-
-
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
     AnimalService animalService = new AnimalService(animalRepoMock);
 
