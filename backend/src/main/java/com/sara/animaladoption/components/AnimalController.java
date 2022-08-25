@@ -11,18 +11,15 @@ import java.util.List;
 @RequestMapping("/animals")
 public class AnimalController {
 
-private final AnimalService animalService;
+    private final AnimalService animalService;
 
     public AnimalController(AnimalService animalService) {
         this.animalService = animalService;
     }
 
     @GetMapping
-    public List<Animal> getAllAnimals(){
+    public List<Animal> getAllAnimals() {
         return animalService.getAllAnimals();
     }
-
-
-
 
 }
