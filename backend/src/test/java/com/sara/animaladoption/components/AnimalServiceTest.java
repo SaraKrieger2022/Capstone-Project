@@ -5,14 +5,11 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 class AnimalServiceTest {
-    AnimalRepo animalRepoMock = mock(AnimalRepo.class);
-    AnimalService animalService = new AnimalService(animalRepoMock);
-
-
     List<Animal> animals = List.of(
             new Animal("1", "Penny", "Jack Russell Terrier", "female",
                     "black-white-brown", "5", "small", true, true,
@@ -26,8 +23,15 @@ class AnimalServiceTest {
 
     );
 
+    AnimalRepo animalRepoMock = mock(AnimalRepo.class);
+    AnimalService animalService = new AnimalService(animalRepoMock);
+
+    private final Animal animal = new Animal("123", "Betty", "Beagle", "female",
+            "brown", "4", "medium", true, true, true, true,
+            true, false);
+
     @Test
-    void getAllAnimals() {
+    void getAllAnimalsTest() {
         when(animalRepoMock.findAll()).thenReturn(animals);
 
         List<Animal> actual = animalService.getAllAnimals();
@@ -35,5 +39,19 @@ class AnimalServiceTest {
 
         assertThat(actual).isEqualTo(expected);
     }
+
+
+    @Test
+    void addAnimalTest() {
+        when(animalRepoMock.save((any(Animal.class)))).thenReturn(animal);
+
+        Animal actual = animalService.addAnimal(new NewAnimal(animal.name(), animal.breed(),
+                animal.gender(), animal.colour(), animal.age(), animal.size(), animal.vaccinated(),
+                animal.spayed_neutered(), animal.healthy(), animal.kids(), animal.other_dogs(), animal.cats()));
+
+        assertThat(actual).isEqualTo(animal);
+
+    }
+
 
 }
