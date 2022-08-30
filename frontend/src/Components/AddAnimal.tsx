@@ -1,6 +1,11 @@
 import {FormEvent, useState} from "react";
+import {Animal} from "./Animal";
 
-export default function AddAnimal() {
+type AddAnimalProps = {
+    addAnimal: (name: string, breed: string, gender: string, colour: string, age: string, size: string) => Promise<Animal>
+}
+
+export default function AddAnimal(props: AddAnimalProps) {
 
     const [animal, setAnimal] = useState({
         name: "",
