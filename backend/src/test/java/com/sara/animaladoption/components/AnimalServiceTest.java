@@ -1,6 +1,7 @@
 package com.sara.animaladoption.components;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 
@@ -31,6 +32,7 @@ class AnimalServiceTest {
             true, false);
 
     @Test
+    @DirtiesContext
     void getAllAnimalsTest() {
         when(animalRepoMock.findAll()).thenReturn(animals);
 
