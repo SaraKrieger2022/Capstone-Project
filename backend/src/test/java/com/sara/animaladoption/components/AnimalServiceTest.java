@@ -44,6 +44,7 @@ class AnimalServiceTest {
 
 
     @Test
+    @DirtiesContext
     void addAnimalTest() {
         when(animalRepoMock.save((any(Animal.class)))).thenReturn(animal);
 
