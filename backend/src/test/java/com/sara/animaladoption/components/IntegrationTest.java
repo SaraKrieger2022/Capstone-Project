@@ -34,6 +34,7 @@ class IntegrationTest {
     }
 
     @Test
+    @DirtiesContext
     void addAnimal() throws Exception {
         mockMvc.perform(post("/animals")
                         .contentType(MediaType.APPLICATION_JSON)
