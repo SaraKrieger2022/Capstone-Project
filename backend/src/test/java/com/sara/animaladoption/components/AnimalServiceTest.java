@@ -21,7 +21,6 @@ class AnimalServiceTest {
             new Animal("3", "Nala", "Beagle", "female",
                     "multi-coloured", "2", "medium", false, true,
                     false, true, true, true)
-
     );
 
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
@@ -42,8 +41,8 @@ class AnimalServiceTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-
     @Test
+    @DirtiesContext
     void addAnimalTest() {
         when(animalRepoMock.save((any(Animal.class)))).thenReturn(animal);
 
@@ -52,8 +51,6 @@ class AnimalServiceTest {
                 animal.spayed_neutered(), animal.healthy(), animal.kids(), animal.other_dogs(), animal.cats()));
 
         assertThat(actual).isEqualTo(animal);
-
     }
-
 
 }

@@ -37,10 +37,8 @@ export default function useAnimals() {
                         .then(getAllAnimals)
                 }
             );
-
     }
-
-
+    
     return (
         {animals, addAnimal}
     );

@@ -32,7 +32,8 @@ public class AnimalService {
                 newAnimal.healthy(),
                 newAnimal.kids(),
                 newAnimal.other_dogs(),
-                newAnimal.cats()));
+                newAnimal.cats()
+        ));
     }
 
     private String getRandomId() {
