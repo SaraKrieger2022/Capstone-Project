@@ -13,7 +13,6 @@ export default function AddAnimal() {
 
     const onAnimalSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
     }
 
     function handleChange(event: { target: { value: any; name: any; }; }) {
@@ -22,7 +21,6 @@ export default function AddAnimal() {
             ...animal,
             [event.target.name]: value
         });
-
     }
 
     return (
@@ -43,8 +41,6 @@ export default function AddAnimal() {
                 <input type=" text" id="size" value={animal?.size} onChange={handleChange} required/>
             </form>
         </>
-    )
+    );
 
 }
-
-

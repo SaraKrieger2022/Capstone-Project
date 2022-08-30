@@ -38,39 +38,39 @@ class IntegrationTest {
         mockMvc.perform(post("/animals")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                {
-                                "name": "Penny",
-                                "breed": "Jack Russell Terrier",
-                                "gender": "female",
-                                "colour": "black-white-brown",
-                                 "age": "5",
-                                 "size": "small",
-                                 "vaccinated": true,
-                                 "spayed_neutered": true,
-                                 "healthy": true,
-                                 "kids": true,
-                                 "other_dogs": true,
-                                 "cats": false
-                                 }
-                                """)
-                )
+                                        {
+                                                "name": "Penny",
+                                                "breed": "Jack Russell Terrier",
+                                                "gender": "female",
+                                                "colour": "black-white-brown",
+                                                 "age": "5",
+                                                 "size": "small",
+                                                 "vaccinated": true,
+                                                 "spayed_neutered": true,
+                                                 "healthy": true,
+                                                 "kids": true,
+                                                 "other_dogs": true,
+                                                 "cats": false
+                                        }
+                                """))
                 .andExpect(status().is(201))
-                .andExpect(content().json("""
-                        {
-                        "name": "Penny",
-                        "breed": "Jack Russell Terrier",
-                        "gender": "female",
-                        "colour": "black-white-brown",
-                        "age": "5",
-                        "size": "small",
-                        "vaccinated": true,
-                        "spayed_neutered": true,
-                        "healthy": true,
-                        "kids": true,
-                        "other_dogs": true,
-                        "cats": false
-                        }
-                        """));
+                .andExpect(content()
+                        .json("""
+                                {
+                                    "name": "Penny",
+                                    "breed": "Jack Russell Terrier",
+                                    "gender": "female",
+                                    "colour": "black-white-brown",
+                                    "age": "5",
+                                    "size": "small",
+                                    "vaccinated": true,
+                                    "spayed_neutered": true,
+                                    "healthy": true,
+                                    "kids": true,
+                                    "other_dogs": true,
+                                    "cats": false
+                                }
+                                """));
     }
 
 }
