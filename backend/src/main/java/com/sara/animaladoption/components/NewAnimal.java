@@ -1,7 +1,6 @@
 package com.sara.animaladoption.components;
 
 public record NewAnimal(
-
         String name,
         String breed,
         String gender,
@@ -15,6 +14,5 @@ public record NewAnimal(
         Boolean other_dogs,
         Boolean cats
 ) {
-
 
 }

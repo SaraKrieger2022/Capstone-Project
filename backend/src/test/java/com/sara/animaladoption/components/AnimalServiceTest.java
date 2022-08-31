@@ -1,6 +1,7 @@
 package com.sara.animaladoption.components;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
 
@@ -20,7 +21,6 @@ class AnimalServiceTest {
             new Animal("3", "Nala", "Beagle", "female",
                     "multi-coloured", "2", "medium", false, true,
                     false, true, true, true)
-
     );
 
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
@@ -31,6 +31,7 @@ class AnimalServiceTest {
             true, false);
 
     @Test
+    @DirtiesContext
     void getAllAnimalsTest() {
         when(animalRepoMock.findAll()).thenReturn(animals);
 
@@ -40,8 +41,8 @@ class AnimalServiceTest {
         assertThat(actual).isEqualTo(expected);
     }
 
-
     @Test
+    @DirtiesContext
     void addAnimalTest() {
         when(animalRepoMock.save((any(Animal.class)))).thenReturn(animal);
 
@@ -50,8 +51,6 @@ class AnimalServiceTest {
                 animal.spayed_neutered(), animal.healthy(), animal.kids(), animal.other_dogs(), animal.cats()));
 
         assertThat(actual).isEqualTo(animal);
-
     }
-
 
 }
