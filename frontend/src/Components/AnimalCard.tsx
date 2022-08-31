@@ -1,4 +1,5 @@
-import {Animal} from "./Animal";
+import Animal from "./Animal";
+import {Button, Card, ListGroup} from "react-bootstrap";
 
 type AnimalCardProps = {
     animal: Animal
@@ -8,19 +9,24 @@ export default function AnimalCard(props: AnimalCardProps) {
 
     return (
         <>
-            {props.animal.id}
-            {props.animal.name}
-            {props.animal.breed}
-            {props.animal.gender}
-            {props.animal.colour}
-            {props.animal.age}
-            {props.animal.size}
-            {props.animal.vaccinated}
-            {props.animal.spayed_neutered}
-            {props.animal.healthy}
-            {props.animal.kids}
-            {props.animal.other_dogs}
-            {props.animal.cats}
+            <Card style={{width: '18rem'}}>
+                <Card.Img variant="top" src="holder.js/100px180"/>
+                <Card.Body>
+                    <Card.Title>Card Title</Card.Title>
+                    <Card.Text>
+                        <ListGroup>
+                            {Object.keys(props.animal).map((e, index) => {
+                                return <ListGroup.Item
+                                    key={index}>{e}: {Object.values(props.animal)[index]}</ListGroup.Item>
+                            })
+                            }
+                        </ListGroup>
+                    </Card.Text>
+                    <Button variant="primary">Go somewhere</Button>
+                </Card.Body>
+            </Card>
+
+
         </>
     );
 }

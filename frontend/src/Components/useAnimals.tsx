@@ -1,7 +1,7 @@
-import {Animal} from "./Animal";
+import Animal from "./Animal";
 import {useEffect, useState} from "react";
 import axios from "axios";
-import {NewAnimal} from "./NewAnimal";
+import NewAnimal from "./NewAnimal";
 
 export default function useAnimals() {
     const [animals, setAnimals] = useState<Animal[]>([])
