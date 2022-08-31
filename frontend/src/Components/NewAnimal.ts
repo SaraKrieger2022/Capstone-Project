@@ -1,3 +1,5 @@
-import {Animal} from "./Animal";
+import Animal from "./Animal";
 
-export type NewAnimal = Omit<Animal, "id">
+type NewAnimal = Omit<Animal, "id">
+
+export default NewAnimal;
