@@ -6,13 +6,11 @@ type Animal = {
     colour: string,
     age: string,
     size: string,
-    vaccinated: boolean,
-    spayed_neutered: boolean,
-    healthy: boolean,
-    kids: boolean,
-    other_dogs: boolean,
-    cats: boolean,
-
+    vaccinated: string,
+    spayed_neutered: string,
+    kids: string,
+    other_dogs: string,
+    cats: string,
 }
 
 export default Animal;

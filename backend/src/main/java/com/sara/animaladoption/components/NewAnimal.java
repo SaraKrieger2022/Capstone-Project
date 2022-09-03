@@ -7,12 +7,11 @@ public record NewAnimal(
         String colour,
         String age,
         String size,
-        Boolean vaccinated,
-        Boolean spayed_neutered,
-        Boolean healthy,
-        Boolean kids,
-        Boolean other_dogs,
-        Boolean cats
+        String vaccinated,
+        String spayed_neutered,
+        String kids,
+        String other_dogs,
+        String cats
 ) {
 
 }

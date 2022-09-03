@@ -2,7 +2,18 @@ import {FormEvent, useState} from "react";
 import Animal from "./Animal";
 
 type AddAnimalProps = {
-    addAnimal: (name: string, breed: string, gender: string, colour: string, age: string, size: string) => Promise<Animal>
+    addAnimal: (name: string,
+                breed: string,
+                gender: string,
+                colour: string,
+                age: string,
+                size: string,
+                vaccinated: string,
+                spayed_neutered: string,
+                kids: string,
+                other_dogs: string,
+                cats: string
+    ) => Promise<Animal>
 }
 
 export default function AddAnimal(props: AddAnimalProps) {
@@ -13,8 +24,25 @@ export default function AddAnimal(props: AddAnimalProps) {
         gender: "",
         colour: "",
         age: "",
-        size: ""
+        size: "",
+        vaccinated: "",
+        spayed_neutered: "",
+        kids: "",
+        other_dogs: "",
+        cats: ""
+
     });
+
+
+    const [checked, setChecked] = useState(false);
+
+    const selectionField: string [] = [
+        "vaccinated",
+        "spayed_neutered",
+        "kids",
+        "other_dogs",
+        "cats",
+    ]
 
     const onAnimalSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
@@ -32,18 +60,30 @@ export default function AddAnimal(props: AddAnimalProps) {
         <>
             <form onSubmit={onAnimalSubmit}>
                 <h3>Basic Information</h3>
-                <label>Name</label>
-                <input type="text" id="name" name="name" value={animal.name} onChange={handleChange} required/>
-                <label>Breed</label>
-                <input type=" text" id="breed" name="breed" value={animal.breed} onChange={handleChange} required/>
-                <label>Gender</label>
-                <input type=" text" id="gender" value={animal.gender} onChange={handleChange} required/>
-                <label>Colour</label>
-                <input type=" text" id="colour" value={animal?.colour} onChange={handleChange} required/>
-                <label>Age</label>
-                <input type=" text" id="age" value={animal?.age} onChange={handleChange} required/>
-                <label>Size</label>
-                <input type=" text" id="size" value={animal?.size} onChange={handleChange} required/>
+                <div className="container text-center">
+                    {Object.keys(animal).map((e, index) => {
+                        return e !== "id" &&
+                            <div className="row pb-2 input-group" key={index}>
+                                <div className="col-4 text-start">
+                                    {e}:
+                                </div>
+                                <div className="col-8">
+                                    {selectionField.includes(e) ?
+                                        <select className="form-select w-75 ms-auto"
+                                                aria-label="Default select example">
+                                            <option selected>Open this select menu</option>
+                                            <option value="1">yes</option>
+                                            <option value="2">no</option>
+                                            <option value="3">unknown</option>
+                                        </select>
+                                        : <input type=" text" name={e}
+                                                 value={Object.values(animal)[index]}
+                                                 onChange={handleChange}
+                                                 required/>}
+                                </div>
+                            </div>
+                    })}
+                </div>
             </form>
         </>
     );

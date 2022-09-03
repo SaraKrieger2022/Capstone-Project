@@ -1,5 +1,5 @@
 import Animal from "./Animal";
-import {Button, Card, ListGroup} from "react-bootstrap";
+import {Button, Card, ListGroup, ListGroupItem} from "react-bootstrap";
 
 type AnimalCardProps = {
     animal: Animal
@@ -7,25 +7,28 @@ type AnimalCardProps = {
 
 export default function AnimalCard(props: AnimalCardProps) {
 
+    // new array with id vacci...
+    //wenn  contains array e nicht... 23
+
+
     return (
         <>
             <Card style={{width: '18rem'}}>
-                <Card.Img variant="top" src="holder.js/100px180"/>
+                <Card.Img variant="top" src={"https://source.unsplash.com/random/100x100/?dog&" + props.animal.breed}/>
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>{props.animal.name}</Card.Title>
                     <Card.Text>
                         <ListGroup>
-                            {Object.keys(props.animal).map((e, index) => {
-                                return <ListGroup.Item
-                                    key={index}>{e}: {Object.values(props.animal)[index]}</ListGroup.Item>
-                            })
-                            }
+                            <ListGroupItem>{props.animal.breed}</ListGroupItem>
+                            <ListGroupItem>{props.animal.gender + " / " + props.animal.age + " years"}</ListGroupItem>
+                            <p>I'm the most amazing dog ever!!</p>
+                            <p>I'm the most amazing dog ever!!</p>
+                            <p>I'm the most amazing dog ever!!</p>
                         </ListGroup>
                     </Card.Text>
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
             </Card>
-
 
         </>
     );

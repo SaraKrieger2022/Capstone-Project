@@ -4,20 +4,19 @@ import org.springframework.data.annotation.Id;
 
 public record Animal(
 
-    @Id
-    String id,
-    String name,
-    String breed,
-    String gender,
-    String colour,
-    String age,
-    String size,
-    boolean vaccinated,
-    boolean spayed_neutered,
-    boolean healthy,
-    boolean kids,
-    boolean other_dogs,
-    boolean cats
+        @Id
+        String id,
+        String name,
+        String breed,
+        String gender,
+        String colour,
+        String age,
+        String size,
+        String vaccinated,
+        String spayed_neutered,
+        String kids,
+        String other_dogs,
+        String cats
 
-    ){
+) {
 }

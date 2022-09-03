@@ -29,7 +29,6 @@ public class AnimalService {
                 newAnimal.size(),
                 newAnimal.vaccinated(),
                 newAnimal.spayed_neutered(),
-                newAnimal.healthy(),
                 newAnimal.kids(),
                 newAnimal.other_dogs(),
                 newAnimal.cats()

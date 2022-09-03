@@ -20,15 +20,14 @@ export default function useAnimals() {
         const newAnimal: NewAnimal = {
             age: "",
             breed: "",
-            cats: false,
+            cats: "",
             colour: "",
             gender: "",
-            healthy: false,
-            kids: false,
-            other_dogs: false,
+            kids: "",
+            other_dogs: "",
             size: "",
-            spayed_neutered: false,
-            vaccinated: false,
+            spayed_neutered: "",
+            vaccinated: "",
             name: newName
         }
         return axios.post("/animals", newAnimal)
@@ -38,7 +37,7 @@ export default function useAnimals() {
                 }
             );
     }
-    
+
     return (
         {animals, addAnimal}
     );
