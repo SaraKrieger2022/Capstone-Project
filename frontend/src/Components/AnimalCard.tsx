@@ -1,4 +1,4 @@
-import {Animal} from "./Animal";
+import Animal from "./Animal";
 
 type AnimalCardProps = {
     animal: Animal

@@ -1,4 +1,4 @@
-export type Animal = {
+type Animal = {
     id: string,
     name: string,
     breed: string,
@@ -14,3 +14,5 @@ export type Animal = {
     cats: boolean,
 
 }
+
+export default Animal;
