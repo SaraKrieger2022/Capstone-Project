@@ -25,7 +25,6 @@ export default function AnimalCard(props: AnimalCardProps) {
                     <Button variant="primary">Go somewhere</Button>
                 </Card.Body>
             </Card>
-
         </>
     );
 }

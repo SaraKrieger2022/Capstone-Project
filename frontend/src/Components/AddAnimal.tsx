@@ -19,7 +19,7 @@ export default function AddAnimal(props: AddAnimalProps) {
         spayed_neutered: "unknown",
         kids: "unknown",
         other_dogs: "unknown",
-        cats: "unknown"
+        cats: "unknown",
 
     });
 
@@ -29,11 +29,12 @@ export default function AddAnimal(props: AddAnimalProps) {
         "kids",
         "other_dogs",
         "cats",
+
     ]
 
-    const onAnimalSubmit = (event: FormEvent<HTMLFormElement>) => {
+    const onAnimalSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        props.addAnimal(animal)
+        await props.addAnimal(animal);
         //   console.log(animal);
 
     }
@@ -85,11 +86,12 @@ export default function AddAnimal(props: AddAnimalProps) {
                                 </div>
                                 <div className="col-8">
                                     {selectionField.includes(e) ?
-                                        <select className="form-select w-75 ms-auto "
+                                        <select className="form-select w-75 ms-auto" name={e} onChange={handleChange}
                                                 aria-label="Test">
-                                            <option value="3">unknown</option>
-                                            <option value="1">yes</option>
-                                            <option value="2">no</option>
+                                            <option value="unknown">unknown</option>
+                                            <option value="yes">yes</option>
+                                            <option value="no">no</option>
+
                                         </select>
                                         : <input type="text"
                                                  name={e}
