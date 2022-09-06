@@ -76,7 +76,7 @@ export default function AddAnimal(props: AddAnimalProps) {
                         <span className="visually-hidden">Next</span>
                     </button>
                 </div>
-                <div className="container text-center">
+                <div className="container text-center m-4">
                     {Object.keys(animal).map((e, index) => {
                         return e !== "id" &&
                             <div className="row pb-2 input-group" key={index}>
@@ -85,7 +85,7 @@ export default function AddAnimal(props: AddAnimalProps) {
                                 </div>
                                 <div className="col-8">
                                     {selectionField.includes(e) ?
-                                        <select className="form-select w-75 ms-auto"
+                                        <select className="form-select w-75 ms-auto "
                                                 aria-label="Test">
                                             <option value="3">unknown</option>
                                             <option value="1">yes</option>
