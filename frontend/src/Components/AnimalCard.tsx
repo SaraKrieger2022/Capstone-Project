@@ -7,10 +7,6 @@ type AnimalCardProps = {
 
 export default function AnimalCard(props: AnimalCardProps) {
 
-    // new array with id vacci...
-    //wenn  contains array e nicht... 23
-
-
     return (
         <>
             <Card style={{width: '18rem'}}>

@@ -1,40 +1,27 @@
 import {FormEvent, useState} from "react";
 import Animal from "./Animal";
+import NewAnimal from "./NewAnimal";
 
 type AddAnimalProps = {
-    addAnimal: (name: string,
-                breed: string,
-                gender: string,
-                colour: string,
-                age: string,
-                size: string,
-                vaccinated: string,
-                spayed_neutered: string,
-                kids: string,
-                other_dogs: string,
-                cats: string
-    ) => Promise<Animal>
+    addAnimal: (animal: NewAnimal) => Promise<Animal>;
 }
 
 export default function AddAnimal(props: AddAnimalProps) {
 
-    const [animal, setAnimal] = useState({
+    const [animal, setAnimal] = useState<NewAnimal>({
         name: "",
         breed: "",
         gender: "",
         colour: "",
         age: "",
         size: "",
-        vaccinated: "",
-        spayed_neutered: "",
-        kids: "",
-        other_dogs: "",
-        cats: ""
+        vaccinated: "unknown",
+        spayed_neutered: "unknown",
+        kids: "unknown",
+        other_dogs: "unknown",
+        cats: "unknown"
 
     });
-
-
-    const [checked, setChecked] = useState(false);
 
     const selectionField: string [] = [
         "vaccinated",
@@ -46,9 +33,12 @@ export default function AddAnimal(props: AddAnimalProps) {
 
     const onAnimalSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
+        props.addAnimal(animal)
+        //   console.log(animal);
+
     }
 
-    function handleChange(event: { target: { value: any; name: any; }; }) {
+    function handleChange(event: { target: { value: string; name: string; }; }) {
         const value = event.target.value;
         setAnimal({
             ...animal,
@@ -60,7 +50,33 @@ export default function AddAnimal(props: AddAnimalProps) {
         <>
             <form onSubmit={onAnimalSubmit}>
                 <h3>Basic Information</h3>
-                <div className="container text-center">
+                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
+                    <div className="carousel-inner">
+                        <div className="carousel-item active">
+                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
+                                 alt="..."/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
+                                 alt="..."/>
+                        </div>
+                        <div className="carousel-item">
+                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
+                                 alt="..."/>
+                        </div>
+                    </div>
+                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Previous</span>
+                    </button>
+                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span className="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div className="container text-center m-4">
                     {Object.keys(animal).map((e, index) => {
                         return e !== "id" &&
                             <div className="row pb-2 input-group" key={index}>
@@ -69,20 +85,23 @@ export default function AddAnimal(props: AddAnimalProps) {
                                 </div>
                                 <div className="col-8">
                                     {selectionField.includes(e) ?
-                                        <select className="form-select w-75 ms-auto"
-                                                aria-label="Default select example">
-                                            <option selected>Open this select menu</option>
+                                        <select className="form-select w-75 ms-auto "
+                                                aria-label="Test">
+                                            <option value="3">unknown</option>
                                             <option value="1">yes</option>
                                             <option value="2">no</option>
-                                            <option value="3">unknown</option>
                                         </select>
-                                        : <input type=" text" name={e}
+                                        : <input type="text"
+                                                 name={e}
                                                  value={Object.values(animal)[index]}
                                                  onChange={handleChange}
                                                  required/>}
                                 </div>
                             </div>
                     })}
+                </div>
+                <div>
+                    <button type="submit" className="btn btn-light">Save</button>
                 </div>
             </form>
         </>

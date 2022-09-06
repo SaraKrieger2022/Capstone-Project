@@ -16,20 +16,7 @@ export default function useAnimals() {
             .then(setAnimals)
     }
 
-    const addAnimal = (newName: string) => {
-        const newAnimal: NewAnimal = {
-            age: "",
-            breed: "",
-            cats: "",
-            colour: "",
-            gender: "",
-            kids: "",
-            other_dogs: "",
-            size: "",
-            spayed_neutered: "",
-            vaccinated: "",
-            name: newName
-        }
+    const addAnimal = (newAnimal: NewAnimal) => {
         return axios.post("/animals", newAnimal)
             .then((response) => {
                     return response.data
