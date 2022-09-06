@@ -12,6 +12,7 @@ export default function AllRoutes() {
             <Routes>
                 <Route path={"/animals"} element={<AnimalList animals={animalHook.animals}/>}/>
                 <Route path={"/animals/add"} element={<AddAnimal addAnimal={animalHook.addAnimal}/>}/>
+                <Route path={"/animals/details"} element={<AddAnimal addAnimal={animalHook.addAnimal}/>}/>
             </Routes>
         </>
     );
