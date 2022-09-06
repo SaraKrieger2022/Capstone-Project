@@ -1,9 +1,9 @@
 import {FormEvent, useState} from "react";
-import Animal from "./Animal";
 import NewAnimal from "./NewAnimal";
+import Animal from "./Animal";
 
 type AddAnimalProps = {
-    addAnimal: (animal: NewAnimal) => Promise<Animal>;
+    addAnimal: (animal: NewAnimal) => Promise<Animal>
 }
 
 export default function AddAnimal(props: AddAnimalProps) {
