@@ -45,12 +45,11 @@ class IntegrationTest {
                                                 "colour": "black-white-brown",
                                                  "age": "5",
                                                  "size": "small",
-                                                 "vaccinated": true,
-                                                 "spayed_neutered": true,
-                                                 "healthy": true,
-                                                 "kids": true,
-                                                 "other_dogs": true,
-                                                 "cats": false
+                                                 "vaccinated": "yes",
+                                                 "spayed_neutered": "yes",
+                                                 "kids": "yes",
+                                                 "other_dogs": "yes",
+                                                 "cats": "yes"
                                         }
                                 """))
                 .andExpect(status().is(201))
@@ -63,12 +62,11 @@ class IntegrationTest {
                                     "colour": "black-white-brown",
                                     "age": "5",
                                     "size": "small",
-                                    "vaccinated": true,
-                                    "spayed_neutered": true,
-                                    "healthy": true,
-                                    "kids": true,
-                                    "other_dogs": true,
-                                    "cats": false
+                                    "vaccinated": "yes",
+                                    "spayed_neutered": "yes",
+                                    "kids": "yes",
+                                    "other_dogs": "yes",
+                                    "cats": "yes"
                                 }
                                 """));
     }
