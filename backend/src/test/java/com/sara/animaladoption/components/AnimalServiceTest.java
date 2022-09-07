@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.test.annotation.DirtiesContext;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -26,9 +27,9 @@ class AnimalServiceTest {
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
     AnimalService animalService = new AnimalService(animalRepoMock);
 
-    private final Animal animal = new Animal("123", "Betty", "Beagle", "female",
-            "brown", "4", "medium", "yes", "yes", "yes", "yes",
-            "yes");
+    Animal animal = new Animal("1", "Penny", "Jack Russell Terrier", "female",
+            "black-white-brown", "5", "small", "yes", "yes",
+            "yes", "yes", "yes");
 
     @Test
     @DirtiesContext
@@ -52,5 +53,15 @@ class AnimalServiceTest {
 
         assertThat(actual).isEqualTo(animal);
     }
+
+
+    @Test
+    @DirtiesContext
+    void getAnimalByIdTest() {
+        when(animalRepoMock.findById(any(String.class))).thenReturn(Optional.of(animal));
+
+
+    }
+
 
 }

@@ -42,7 +42,8 @@ public class AnimalService {
     }
 
     public Animal getAnimalById(String id) {
-        return animalRepo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        return animalRepo.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
     }
 
