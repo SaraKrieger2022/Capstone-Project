@@ -83,16 +83,18 @@ class IntegrationTest {
         String saveResult = mockMvc.perform(post("/animals")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
-                                { "name": "Penny", "breed": "Jack Russell Terrier", "gender": "female",
-                                                         "colour": "black-white-brown",
-                                                          "age": "5",
-                                                          "size": "small",
-                                                          "vaccinated": "yes",
-                                                          "spayed_neutered": "yes",
-                                                          "kids": "yes",
-                                                          "other_dogs": "yes",
-                                                          "cats": "yes"
-                                                          }
+                                { "name": "Penny",
+                                "breed": "Jack Russell Terrier",
+                                "gender": "female",
+                                "colour": "black-white-brown",
+                                "age": "5",
+                                "size": "small",
+                                "vaccinated": "yes",
+                                "spayed_neutered": "yes",
+                                "kids": "yes",
+                                "other_dogs": "yes",
+                                "cats": "yes"
+                                }
                                 """)
                 ).andExpect(status().isCreated())
                 .andReturn()
@@ -102,7 +104,7 @@ class IntegrationTest {
         Animal saveAnimalResult = objectMapper.readValue(saveResult, Animal.class);
         String id = saveAnimalResult.id();
 
-        mockMvc.perform(get("/animals/" + id))
+        mockMvc.perform(get("/animals/animaldetails/" + id))
                 .andExpect(status().is(200))
                 .andExpect(content()
                         .json("""
