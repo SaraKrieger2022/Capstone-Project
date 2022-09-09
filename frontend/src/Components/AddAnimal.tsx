@@ -93,7 +93,7 @@ export default function AddAnimal(props: AddAnimalProps) {
                                             <option value="no">no</option>
 
                                         </select>
-                                        : <input type="text"
+                                        : <input className="border border-secondary rounded-1" type="text"
                                                  name={e}
                                                  value={Object.values(animal)[index]}
                                                  onChange={handleChange}

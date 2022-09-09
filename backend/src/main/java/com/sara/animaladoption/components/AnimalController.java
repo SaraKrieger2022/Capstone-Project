@@ -27,7 +27,7 @@ public class AnimalController {
         return animalService.addAnimal(newAnimal);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/animaldetails/{id}")
     public ResponseEntity<Animal> getAnimalById(@PathVariable String id) {
         Animal animal = animalService.getAnimalById(id);
         return new ResponseEntity<>(animal, HttpStatus.OK);
