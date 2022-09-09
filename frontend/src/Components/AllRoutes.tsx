@@ -14,7 +14,7 @@ export default function AllRoutes() {
                 <Route path={"/animals"} element={<AnimalList animals={animalHook.animals}/>}/>
                 <Route path={"/animals/add"} element={<AddAnimal addAnimal={animalHook.addAnimal}/>}/>
                 <Route path={"/animals/animaldetails/:id"}
-                       element={<AnimalDetails getAnimalById={animalHook.getAnimalById}/>}/>
+                       element={<AnimalDetails getAnimalByID={animalHook.getAnimalById}/>}/>
             </Routes>
         </>
     );

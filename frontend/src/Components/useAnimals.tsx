@@ -27,7 +27,7 @@ export default function useAnimals() {
     const getAnimalById = (id: string) => {
         return axios.get(`/animals/animaldetails/${id}`)
             .then(response => response.data)
-            .then(data => setAnimals(data))
+
     }
 
     return (
