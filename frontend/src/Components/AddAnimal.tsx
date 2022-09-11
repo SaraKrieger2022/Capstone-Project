@@ -29,14 +29,11 @@ export default function AddAnimal(props: AddAnimalProps) {
         "kids",
         "other_dogs",
         "cats",
-
     ]
 
     const onAnimalSubmit = async (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         await props.addAnimal(animal);
-        //   console.log(animal);
-
     }
 
     function handleChange(event: { target: { value: string; name: string; }; }) {
@@ -92,7 +89,8 @@ export default function AddAnimal(props: AddAnimalProps) {
                                             <option value="yes">yes</option>
                                             <option value="no">no</option>
                                         </select>
-                                        : <input className="border border-secondary rounded-1 w-75 ml-auto" type="text"
+                                        : <input className="border border-secondary rounded-1 w-75 ms-5"
+                                                 type="text"
                                                  name={e}
                                                  value={Object.values(animal)[index]}
                                                  onChange={handleChange}
