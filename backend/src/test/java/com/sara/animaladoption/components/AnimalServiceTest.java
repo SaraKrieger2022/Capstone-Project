@@ -1,11 +1,16 @@
 package com.sara.animaladoption.components;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.springframework.http.HttpStatus;
 import org.springframework.test.annotation.DirtiesContext;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
+import java.util.Optional;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
+import static org.assertj.core.api.AssertionsForClassTypes.assertThatExceptionOfType;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -26,9 +31,9 @@ class AnimalServiceTest {
     AnimalRepo animalRepoMock = mock(AnimalRepo.class);
     AnimalService animalService = new AnimalService(animalRepoMock);
 
-    private final Animal animal = new Animal("123", "Betty", "Beagle", "female",
-            "brown", "4", "medium", "yes", "yes", "yes", "yes",
-            "yes");
+    Animal animal = new Animal("1", "Penny", "Jack Russell Terrier", "female",
+            "black-white-brown", "5", "small", "yes", "yes",
+            "yes", "yes", "yes");
 
     @Test
     @DirtiesContext
@@ -53,4 +58,19 @@ class AnimalServiceTest {
         assertThat(actual).isEqualTo(animal);
     }
 
+    @Test
+    @DirtiesContext
+    void getAnimalByIdIfExistsTest() {
+        when(animalRepoMock.findById(any(String.class))).thenReturn(Optional.of(animal));
+        Animal actual = animalService.getAnimalById("bla");
+        Assertions.assertEquals(animal, actual);
+    }
+
+    @Test
+    @DirtiesContext
+    void getAnimalByIdIfDoesntExistsTest() {
+        when(animalRepoMock.findById(any(String.class))).thenThrow(new ResponseStatusException(HttpStatus.NOT_FOUND));
+        assertThatExceptionOfType(ResponseStatusException.class)
+                .isThrownBy(() -> animalService.getAnimalById("bla"));
+    }
 }

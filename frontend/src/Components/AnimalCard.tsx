@@ -22,7 +22,8 @@ export default function AnimalCard(props: AnimalCardProps) {
                             <p>I'm the most amazing dog ever!!</p>
                         </ListGroup>
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <Button href={"http://localhost:3000/#/animals/animaldetails/" + props.animal.id} variant="primary">Go
+                        somewhere</Button>
                 </Card.Body>
             </Card>
         </>

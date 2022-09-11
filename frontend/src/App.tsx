@@ -11,7 +11,7 @@ export default function App() {
             <div className={"bg-primary m-auto max w-80"}>
 
                 <header>
-                    <h1>Dogsdogs</h1>
+                    <h1>Dogs</h1>
                 </header>
                 <main className="text-center">
                     <AllRoutes/>

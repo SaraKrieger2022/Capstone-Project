@@ -24,8 +24,13 @@ export default function useAnimals() {
             });
     }
 
+    const getAnimalById = (id: string) => {
+        return axios.get(`/animals/animaldetails/${id}`)
+            .then(response => response.data)
+
+    }
 
     return (
-        {animals, addAnimal}
+        {animals, addAnimal, getAnimalById}
     );
 }
