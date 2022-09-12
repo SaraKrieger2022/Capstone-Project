@@ -47,33 +47,8 @@ export default function AddAnimal(props: AddAnimalProps) {
     return (
         <>
             <form onSubmit={onAnimalSubmit}>
-                <h3>Basic Information</h3>
-                <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                        <div className="carousel-item active">
-                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
-                                 alt="..."/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
-                                 alt="..."/>
-                        </div>
-                        <div className="carousel-item">
-                            <img src="https://source.unsplash.com/random/200x100/?dog&" className="d-block w-100"
-                                 alt="..."/>
-                        </div>
-                    </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="prev">
-                        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
-                            data-bs-slide="next">
-                        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span className="visually-hidden">Next</span>
-                    </button>
-                </div>
+                <h3 className="p-2">Basic Information</h3>
+
                 <div className="container text-center m-4">
                     {Object.keys(animal).map((e, index) => {
                         return e !== "id" &&

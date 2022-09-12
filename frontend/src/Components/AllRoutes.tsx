@@ -3,6 +3,7 @@ import {Route, Routes} from "react-router-dom";
 import AnimalList from "./AnimalList";
 import AddAnimal from "./AddAnimal";
 import AnimalDetails from "./AnimalDetails";
+import Home from "../../../../../Library/Application Support/JetBrains/IntelliJIdea2022.1/scratches/Home";
 
 export default function AllRoutes() {
 
@@ -15,6 +16,10 @@ export default function AllRoutes() {
                 <Route path={"/animals/add"} element={<AddAnimal addAnimal={animalHook.addAnimal}/>}/>
                 <Route path={"/animals/animaldetails/:id"}
                        element={<AnimalDetails getAnimalByID={animalHook.getAnimalById}/>}/>
+                <Route path={"/home"} element={"Home"}/>
+                <Route path={"/about"} element={"About us"}/>
+                <Route path={"/contact"} element={"Contact us"}/>
+                <Route path={"/adopt"} element={"Adoption form"}/>
             </Routes>
         </>
     );
