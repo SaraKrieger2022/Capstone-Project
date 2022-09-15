@@ -9,7 +9,6 @@ export default function Navigation() {
                 <img src="/pictures/anna-dudkova-urs_y9NwFcc-unsplash.jpg"
                      className="img-fluid max-width: 100% height: auto" alt="..."/>
             </section>
-
             <nav className="navbar-nav mt-4 mb-5">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
