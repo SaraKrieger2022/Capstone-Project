@@ -14,15 +14,17 @@ export default function Navigation() {
                 <ul className="nav nav-pills">
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page"
-                           href={"http://localhost:3000/#/home"}>Home</a>
+                           href="">Home</a>
+                        <NavLink to={"/"}>Home</NavLink>
                     </li>
                     <li className="nav-item box">
-                        <a className="nav-link active" href="http://localhost:3000/#/animals">Adopt a dog</a>
-                        <NavLink to={"/home"}></NavLink>
+                        <a className="nav-link active" href="">Adopt a dog</a>
+                        <NavLink to={"/animals"}>Adopt a dog</NavLink>
                     </li>
                     <li className="nav-item box">
-                        <a className="nav-link active" href="http://localhost:3000/#/animals/add">Add a
+                        <a className="nav-link active" href="">Add a
                             dog</a>
+                        <NavLink to={"/animals/add"}>Add a dog</NavLink>
                     </li>
                 </ul>
             </nav>

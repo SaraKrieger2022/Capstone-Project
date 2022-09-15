@@ -1,6 +1,7 @@
 import {FormEvent, useState} from "react";
 import NewAnimal from "./NewAnimal";
 import Animal from "./Animal";
+import "./AddAnimal.css"
 
 type AddAnimalProps = {
     addAnimal: (animal: NewAnimal) => Promise<Animal>
