@@ -18,6 +18,7 @@ export default function AnimalDetails(props: AnimalDetailsProps) {
                 return
             }
             props.getAnimalByID(id).then(data => setAnimal(data))
+            //eslint-disable-next-line
         }, []
     )
     return (
