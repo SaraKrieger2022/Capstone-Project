@@ -1,0 +1,30 @@
+.address-box {
+    bottom: 0;
+    height: 80px;
+    background-color: #fa8b41;
+    color: black;
+    border-style: solid;
+    border-color: #fa8b41;
+    display: block;
+    position: sticky;
+    margin-top: 100px;
+
+}
+
+.address-text {
+    text-align: center;
+    word-spacing: 5px;
+    color: black;
+    font-size: 10px;
+    padding: 0px;
+    margin: 0px;
+}
+
+.address-title {
+    text-align: center;
+    word-spacing: 5px;
+    color: black;
+    font-size: 12px;
+    padding: 0px;
+    margin: 5px;
+}

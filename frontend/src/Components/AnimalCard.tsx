@@ -17,9 +17,6 @@ export default function AnimalCard(props: AnimalCardProps) {
                         <ListGroup>
                             <ListGroupItem>{props.animal.breed}</ListGroupItem>
                             <ListGroupItem>{props.animal.gender + " / " + props.animal.age + " years"}</ListGroupItem>
-                            <p>I'm the most amazing dog ever!!</p>
-                            <p>I'm the most amazing dog ever!!</p>
-                            <p>I'm the most amazing dog ever!!</p>
                         </ListGroup>
                     </Card.Text>
                     <Button href={"http://localhost:3000/#/animals/animaldetails/" + props.animal.id} variant="primary">Go

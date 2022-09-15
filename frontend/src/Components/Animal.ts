@@ -6,8 +6,12 @@ type Animal = {
     colour: string,
     age: string,
     size: string,
+
+
     vaccinated: string,
     spayed_neutered: string,
+
+
     kids: string,
     other_dogs: string,
     cats: string,
