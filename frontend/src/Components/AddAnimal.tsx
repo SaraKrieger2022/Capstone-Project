@@ -47,7 +47,7 @@ export default function AddAnimal(props: AddAnimalProps) {
 
     return (
         <>
-            <form onSubmit={onAnimalSubmit}>
+            <form onSubmit={onAnimalSubmit} autoComplete="off">
                 <h3 className="p-3">Basic Information</h3>
                 <div className="container text-center m-4">
                     {Object.keys(animal).map((e, index) => {
