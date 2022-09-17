@@ -1,9 +1,24 @@
 import Animal from "./Animal";
 import {useParams} from "react-router-dom";
 import {useEffect, useState} from "react";
+import "./AnimalDetails.css"
 
 type AnimalDetailsProps = {
     getAnimalByID: (id: string) => Promise<Animal>
+}
+
+function AnimalProperty(props: { name: string, value: string | undefined }) {
+    return (
+        <div className="row pb-2">
+            <div className="col-5 text-start fs-5 flex-wrap">
+                <p> {props.name.charAt(0).toUpperCase() + props.name.slice(1).replace("_", "/")}:</p>
+            </div>
+            <div className="col-7 text-start h">
+                <p className="input-field bg-white align-middle"> {props.value} </p>
+            </div>
+
+        </div>
+    );
 }
 
 export default function AnimalDetails(props: AnimalDetailsProps) {
@@ -22,8 +37,8 @@ export default function AnimalDetails(props: AnimalDetailsProps) {
         }, []
     )
     return (
-        <div>
-            <h3>{animal?.name}</h3>
+        <div className="animal-display">
+            <h4>{animal?.name}</h4>
             <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -50,20 +65,29 @@ export default function AnimalDetails(props: AnimalDetailsProps) {
                     <span className="visually-hidden">Next</span>
                 </button>
             </div>
-            <div className="container text-center m-4">
-                <div className="row pb-2 input-group">
-                    <div className="col-5 text-start fs-5">
-                        {animal && Object.keys(animal).map((e, index) => {
-                            return <p> {e} :</p>
-                        })}
-                    </div>
-                    <div className="col-7 text-start">
-                        {animal && Object.values(animal).map((e, index) => {
-                            return <p className="bg-white"> {e} </p>
-                        })}
-                    </div>
-                </div>
+            <div className="container text-center container-fluid m-4">
+                <h3>Basic Information</h3>
+                <p className={"properties"}>
+                    <AnimalProperty name="name" value={animal?.name}></AnimalProperty>
+                    <AnimalProperty name="breed" value={animal?.breed}></AnimalProperty>
+                    <AnimalProperty name="gender" value={animal?.gender}></AnimalProperty>
+                    <AnimalProperty name="colour" value={animal?.colour}></AnimalProperty>
+                    <AnimalProperty name="age" value={animal?.age}></AnimalProperty>
+                    <AnimalProperty name="size" value={animal?.size}></AnimalProperty>
+                </p>
+                <h3>Health</h3>
+                <p className={"properties"}>
+                    <AnimalProperty name="vaccinated" value={animal?.vaccinated}></AnimalProperty>
+                    <AnimalProperty name="spayed_neutered" value={animal?.spayed_neutered}></AnimalProperty>
+                </p>
+                <h3>Agreeable with...</h3>
+                <p className={"properties"}>
+                    <AnimalProperty name="kids" value={animal?.kids}></AnimalProperty>
+                    <AnimalProperty name="other_dogs" value={animal?.other_dogs}></AnimalProperty>
+                    <AnimalProperty name="Cats" value={animal?.cats}></AnimalProperty>
+                </p>
             </div>
         </div>
     )
-}
+};
+

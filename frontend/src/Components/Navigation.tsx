@@ -9,20 +9,16 @@ export default function Navigation() {
                 <img src="/pictures/anna-dudkova-urs_y9NwFcc-unsplash.jpg"
                      className="img-fluid max-width: 100% height: auto" alt="..."/>
             </section>
-
             <nav className="navbar-nav mt-4 mb-5">
                 <ul className="nav nav-pills">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page"
-                           href={"http://localhost:3000/#/home"}>Home</a>
+                        <NavLink className="nav-link active" to={"/"}>Home</NavLink>
                     </li>
                     <li className="nav-item box">
-                        <a className="nav-link active" href="http://localhost:3000/#/animals">Adopt a dog</a>
-                        <NavLink to={"/home"}></NavLink>
+                        <NavLink className="nav-link active" to={"/animals"}>Adopt a dog</NavLink>
                     </li>
                     <li className="nav-item box">
-                        <a className="nav-link active" href="http://localhost:3000/#/animals/add">Add a
-                            dog</a>
+                        <NavLink className="nav-link active" to={"/animals/add"}>Add a dog</NavLink>
                     </li>
                 </ul>
             </nav>

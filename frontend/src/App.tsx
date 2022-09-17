@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from "./Components/Footer";
 import Navigation from "./Components/Navigation";
 
-
 export default function App() {
     return (
         <HashRouter>

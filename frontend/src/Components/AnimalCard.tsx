@@ -1,5 +1,6 @@
 import Animal from "./Animal";
 import {Button, Card, ListGroup, ListGroupItem} from "react-bootstrap";
+import "./AnimalCard.css"
 
 type AnimalCardProps = {
     animal: Animal
@@ -19,8 +20,8 @@ export default function AnimalCard(props: AnimalCardProps) {
                             <ListGroupItem>{props.animal.gender + " / " + props.animal.age + " years"}</ListGroupItem>
                         </ListGroup>
                     </Card.Text>
-                    <Button href={"http://localhost:3000/#/animals/animaldetails/" + props.animal.id} variant="primary">Go
-                        somewhere</Button>
+                    <Button className="button" href={"http://localhost:3000/#/animals/animaldetails/" + props.animal.id}
+                    >Go to {props.animal.name + "'s "} details </Button>
                 </Card.Body>
             </Card>
         </>
